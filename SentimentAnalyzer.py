@@ -1,6 +1,6 @@
-from SentimentClassifier import SentimentClassifier
-from helpers.text.TextProcessor import TextProcessor
-from helpers.data.DataManager import DataManager
+from .SentimentClassifier import SentimentClassifier
+from .helpers.text.TextProcessor import TextProcessor
+from .helpers.data.DataManager import DataManager
 
 
 class SentimentAnalyzer:

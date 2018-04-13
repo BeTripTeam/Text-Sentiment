@@ -1,4 +1,4 @@
-from helpers.text.LanguageClassifier import is_en
+from .helpers.text.LanguageClassifier import is_en
 
 
 class SentimentClassifier:

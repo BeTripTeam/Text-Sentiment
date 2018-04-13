@@ -45,7 +45,7 @@ class DataManager:
         return s
 
     def _get_path(self, path):
-        return os.path.abspath(os.path.join(self._basepath, "..", "..", "..", "..", path))
+        return os.path.abspath(os.path.join(self._basepath, "..", "..", path))
 
     def _import_sentiment_classifier(self, paths):
         filepath = self._get_path(paths.sentiment_classifier)

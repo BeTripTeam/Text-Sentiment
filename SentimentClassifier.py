@@ -1,5 +1,4 @@
-from .helpers.text.LanguageClasifier import is_en
-from .helpers.data.DataManager import DataManager
+from helpers.text.LanguageClassifier import is_en
 
 
 class SentimentClassifier:
@@ -9,10 +8,9 @@ class SentimentClassifier:
     -1: negative
     """
     
-    def __init__(self):
-        dm = DataManager()
-        self._classifier_en = dm.sentiment_classifier_en
-        self._classifier_ru = dm.sentiment_classifier_ru
+    def __init__(self, data_menager):
+        self._classifier_en = data_menager.sentiment_classifier_en
+        self._classifier_ru = data_menager.sentiment_classifier_ru
     
     # def get_classes(self, items):
     #     """Returns classes of each item in the set.
@@ -41,7 +39,8 @@ class SentimentClassifier:
         return dist.max(), dist.prob(dist.max())
     
     def get_classes_with_prob(self, items):
-        """Evaluates probabilities of each text_helpers to be with positive and negative sentiment_words.
+        """
+        Evaluates probabilities of each text_helpers to be with positive and negative sentiment_words.
         :param items: list of dictionaries like {"word" : True}
         :return a list of tuples of a form (class, probability of that class)
         """
